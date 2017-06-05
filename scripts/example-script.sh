@@ -70,7 +70,7 @@ fi
 
 ######## variables ########
 doc_root='/var/www'
-git_base="https://git.internetbrands.com/nolo"
+git_base="https://git.com"
 
 date=`date +%Y%m%d%H%M`
 type=${environment^^}
