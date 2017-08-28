@@ -28,14 +28,16 @@ if false
 fi
 
 ######## variables ########
-doc_root='/var/www/websiteHub'
-git_base="https://github.com/NickH10/websiteHub"
+doc_root='/var/www'
+git_branch='websiteHub'
+git_base="https://github.com/NickH10/$git_branch"
 
 ######### main ############
-mkdir -p $doc_root
+sudo rm -rf "$doc_root/$git_branch"
 cd $doc_root
 #sudo git clone $git_base/${git_proj}.git --branch $git_branch $server_root
 sudo git clone $git_base
+sudo chmod -R 755 $doc_root/$git_branch #will want to fix this later
 grep -q -F '127.0.0.1 localhost.nick-hughes.com' /etc/hosts || echo '127.0.0.1 localhost.nick-hughes.com' >> /etc/hosts ##change localhost to just nick-hughes.com
-sudo ln -s $doc_root/conf/httpd.hub.conf /etc/apache2/sites-enabled/
+sudo ln -s $doc_root/$git_branch/conf/httpd.hub.conf /etc/apache2/sites-enabled/
 sudo service apache2 restart
