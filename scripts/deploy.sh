@@ -24,8 +24,12 @@ fi
 
 ######## variables ########
 doc_root='/var/www/hub'
-git_base="https://github.com/NickH10/"
+git_base="https://github.com/NickH10/websiteHub"
 
 ######### main ############
 cd_func $doc_root
-sudo git clone $git_base/${git_proj}.git --branch $git_branch $server_root
+#sudo git clone $git_base/${git_proj}.git --branch $git_branch $server_root
+sudo git clone $git_base
+grep -q -F '127.0.0.1 localhost.nick-hughes.com' /etc/hosts || echo '127.0.0.1 localhost.nick-hughes.com' >> /etc/hosts ##change localhost to just nick-hughes.com
+sudo ln -s $doc_root/conf/httpd.hub.conf /etc/apache2/sites-enabled/
+sudo service apache2 restart
