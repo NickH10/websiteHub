@@ -40,5 +40,8 @@ sudo git clone $git_base
 sudo chmod -R 777 $doc_root/$git_branch #will want to fix this later
 grep -q -F '127.0.0.1 localhost.nick-hughes.com' /etc/hosts || echo '127.0.0.1 localhost.nick-hughes.com' >> /etc/hosts ##change localhost to just nick-hughes.com
 sudo ln -s $doc_root/$git_branch/conf/httpd.hub.conf /etc/apache2/sites-enabled/
+
+sudo apt-get install ruby-full
+sudo gem install sass --no-user-install
+
 sudo service apache2 restart
-as
