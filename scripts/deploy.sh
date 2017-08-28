@@ -11,23 +11,29 @@ display_usage () {
 }
 
 ########## usage ##########
-if [ "$#" -lt 1 ]
-then
-  display_usage "too few arguments supplied"
-  exit 1
-fi
-if [[ $(id -u) -ne 0 ]]
-then
-  display_usage "$0 must be run as root"
-  exit 1
+if false
+	then
+
+		if [ "$#" -lt 1 ]
+		then
+		  display_usage "too few arguments supplied"
+		  exit 1
+		fi
+		if [[ $(id -u) -ne 0 ]]
+		then
+		  display_usage "$0 must be run as root"
+		  exit 1
+		fi
+
 fi
 
 ######## variables ########
-doc_root='/var/www/hub'
+doc_root='/var/www/websiteHub'
 git_base="https://github.com/NickH10/websiteHub"
 
 ######### main ############
-cd_func $doc_root
+mkdir -p $doc_root
+cd $doc_root
 #sudo git clone $git_base/${git_proj}.git --branch $git_branch $server_root
 sudo git clone $git_base
 grep -q -F '127.0.0.1 localhost.nick-hughes.com' /etc/hosts || echo '127.0.0.1 localhost.nick-hughes.com' >> /etc/hosts ##change localhost to just nick-hughes.com
