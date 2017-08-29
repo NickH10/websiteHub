@@ -1,3 +1,7 @@
+//run "sass sass/index.scss index.css" within assets/css
+
+$primary-orange: #fd7000;
+
 html {
 	background: url("../img/tiles.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -6,59 +10,32 @@ html {
 	background-size: cover;
 }
 
-$color: #fd7000;
-$size: 12px;
-$time: 1;
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
 
-main {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background:  #090707;
-}
-
-.dank-ass-loader {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	.row {
-		display: flex;
-	}
-}
-
-.arrow {
-	width: 0; 
-	height: 0;
-	margin: 0 (-$size / 2);
-	border-left: $size solid transparent;
-	border-right: $size solid transparent;
-	border-bottom: ($size * 1.8) solid $color;
-	animation: blink $time + s infinite;
-	filter: drop-shadow(0 0 ($size * 1.5) $color);
-
-	&.down {
-		transform: rotate(180deg);
+	div {
+	    width: 35px;
+	    height: 5px;
+	    background-color: $primary-orange;
+	    margin: 6px 0;
+	    transition: 0.4s;
 	}
 
-	@for $i from 1 through 18 {
-		&.outer-#{$i} {
-			animation-delay: -($time / 18) * $i + s;
-		}  
+    /* Rotate top bar */
+	&.toggled .top-bar {
+	    -webkit-transform: rotate(45deg) translate(8px, 8px) ;
+	    transform: rotate(45deg) translate(8px, 8px) ;
 	}
 
-	@for $i from 1 through 6 {
-		&.inner-#{$i} {
-			animation-delay: -($time / 6) * $i + s;
-		}
+	/* Hide the second bar */
+	&.toggled .middle-bar {
+	    opacity: 0;
 	}
-}
 
-@keyframes blink {
-	0% { opacity: 0.1; }
-	30% { opacity: 1; }
-	100% { opacity: 0.1; }
+	/* Rotate bottom bar */
+	&.toggled .bottom-bar {
+	    -webkit-transform: rotate(-45deg) translate(8px, -8px) ;
+	    transform: rotate(-45deg) translate(8px, -8px) ;
+	}
 }
