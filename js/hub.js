@@ -15,6 +15,7 @@ $(document).ready(function(){
 // toggles whether hamburger is on or off
 function hamburgerToggle(element) {
     element.classList.toggle('toggled');
+    $("#overlay").toggleClass('toggled');
 }
 
 // creates background parallax effect
