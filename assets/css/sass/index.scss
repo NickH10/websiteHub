@@ -7,6 +7,7 @@ html, body {
 	height: 100%;
 	margin: 0;
 	overflow: auto;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 }
 
 #container, #overlay, .website-list {
@@ -26,25 +27,72 @@ html, body {
 	background-color: black;
 	opacity: 0;
 	visibility: hidden;
-	transition: visibility .3s, opacity .3s ease-out;
+	transition: visibility .6s, opacity .6s ease-out 1s;
 
 	&.toggled {
 		visibility: visible;
 		opacity: .7;
 		transition: visibility .6s, opacity .6s ease-in;
+	
+		.website-list {
+			&:nth-child(1) {
+				transition-delay: .15s;
+			}
+			&:nth-child(2) {
+				transition-delay: .3s;
+			}
+			&:nth-child(3) {
+				transition-delay: .45s;
+			}
+			&:nth-child(4) {
+				transition-delay: .6s;
+			}
+
+			li {
+				transform: translateY(-50px);
+				opacity: 1;
+				transition: transform 0.4s, opacity 0.4s;
+			}
+		}
 	}
 
 	.website-list {
 		text-align: center;
+		vertical-align: middle;
 		list-style-type: none;
 		color: $primary-orange;
+		line-height: 140px;
+		margin-top: 100px;
+
+		li {
+			// font-size: calc(30px + (84 - 30) * (100vw - 320px) / (1680 - 320));
+			font-size: 70px;
+
+			transform: translateY(0px);
+			opacity: 0;
+			transition: transform 0.15s, opacity 0.15s;
+
+			&:nth-child(1) {
+				transition-delay: .6s;
+			}
+			&:nth-child(2) {
+				transition-delay: .45s;
+			}
+			&:nth-child(3) {
+				transition-delay: .3s;
+			}
+			&:nth-child(4) {
+				transition-delay: .15s;
+			}
+		}
 	}
+
+	
 }
 
 .hamburger {
 	position: absolute;
 	z-index: 10;
-    display: inline-block;
     cursor: pointer;
     margin: 10px;
 

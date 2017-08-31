@@ -2,7 +2,8 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  overflow: auto; }
+  overflow: auto;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; }
 
 #container, #overlay, .website-list {
   position: absolute;
@@ -19,20 +20,47 @@ html, body {
   background-color: black;
   opacity: 0;
   visibility: hidden;
-  transition: visibility .3s, opacity .3s ease-out; }
+  transition: visibility .6s, opacity .6s ease-out 1s; }
   #overlay.toggled {
     visibility: visible;
     opacity: .7;
     transition: visibility .6s, opacity .6s ease-in; }
+    #overlay.toggled .website-list:nth-child(1) {
+      transition-delay: .15s; }
+    #overlay.toggled .website-list:nth-child(2) {
+      transition-delay: .3s; }
+    #overlay.toggled .website-list:nth-child(3) {
+      transition-delay: .45s; }
+    #overlay.toggled .website-list:nth-child(4) {
+      transition-delay: .6s; }
+    #overlay.toggled .website-list li {
+      transform: translateY(-50px);
+      opacity: 1;
+      transition: transform 0.4s, opacity 0.4s; }
   #overlay .website-list {
     text-align: center;
+    vertical-align: middle;
     list-style-type: none;
-    color: #fd7000; }
+    color: #fd7000;
+    line-height: 140px;
+    margin-top: 100px; }
+    #overlay .website-list li {
+      font-size: 70px;
+      transform: translateY(0px);
+      opacity: 0;
+      transition: transform 0.15s, opacity 0.15s; }
+      #overlay .website-list li:nth-child(1) {
+        transition-delay: .6s; }
+      #overlay .website-list li:nth-child(2) {
+        transition-delay: .45s; }
+      #overlay .website-list li:nth-child(3) {
+        transition-delay: .3s; }
+      #overlay .website-list li:nth-child(4) {
+        transition-delay: .15s; }
 
 .hamburger {
   position: absolute;
   z-index: 10;
-  display: inline-block;
   cursor: pointer;
   margin: 10px;
   /* Rotate top bar */
