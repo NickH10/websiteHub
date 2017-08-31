@@ -21,11 +21,13 @@ function hamburgerToggle(element) {
 // creates background parallax effect
 var backgroundParallax = function() {
 	$('#container').mousemove(function( event ) {
+
 		var containerWidth = $(this).innerWidth(),
 		    containerHeight = $(this).innerHeight(),
-		    mousePositionX = ((event.pageX / containerWidth) * 100)*.05,
-		    mousePositionY = ((event.pageY /containerHeight) * 100)*.05;
+		    mousePosX = ((event.pageX / containerWidth) * 100)*.1,
+		    mousePosY = ((event.pageY / containerHeight) * 100)*.1;
 
-		$(this).css('background-position', mousePositionX + '%' + ' ' + mousePositionY + '%');
+		//want to add 50 to start at 50% default and then adjust according to mouse position
+		$(this).css('background-position', (50 + mousePosX) + '%' + ' ' + (50 + mousePosY) + '%');
 	});
 }

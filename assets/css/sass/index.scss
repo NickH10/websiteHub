@@ -9,36 +9,35 @@ html, body {
 	overflow: auto;
 }
 
-#container, #overlay {
-	width: 100%;
-	height: 100%;
+#container, #overlay, .website-list {
 	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 #container {
-	background: url("../img/fog_forest.jpg") no-repeat center center fixed;
-	background-size: cover;
-	// background-size: 110% 150%; //width height
-	// padding: 10px;
+	background: url("../img/fog_forest.jpg") no-repeat center center;
+	background-size: 110% 110%; //width height
 }
 
 #overlay {
-	display: none;
+	background-color: black;
 	opacity: 0;
-	width: 100%;
-	height: 100%;
-	transition: opacity 3s linear;
+	visibility: hidden;
+	transition: visibility .3s, opacity .3s ease-out;
 
 	&.toggled {
-		display: inline-block;
-		opacity: 1;
-		transition: opacity 0.5s linear;
+		visibility: visible;
+		opacity: .7;
+		transition: visibility .6s, opacity .6s ease-in;
 	}
 
 	.website-list {
-		width: 100%;
-		height: 100%;
+		text-align: center;
 		list-style-type: none;
+		color: $primary-orange;
 	}
 }
 
