@@ -1,42 +1,35 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: auto;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; }
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  overflow: hidden;
+  color: #fd7000;
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: -10px;
+  bottom: -10px;
+  background: url("../img/fog_forest.jpg") no-repeat center center fixed;
+  background-size: 110% 110%; }
 
-#container, #overlay, .website-list {
+#overlay, .website-list {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0; }
 
-#container {
-  background: url("../img/fog_forest.jpg") no-repeat center center;
-  background-size: 110% 110%; }
-
 #overlay {
   background-color: black;
-  opacity: 0;
   visibility: hidden;
-  transition: visibility .6s, opacity .6s ease-out 1s; }
+  opacity: 0;
+  transition: visibility 0.9s, opacity 0.9s ease-out 0.45s; }
   #overlay.toggled {
     visibility: visible;
     opacity: .7;
-    transition: visibility .6s, opacity .6s ease-in; }
-    #overlay.toggled .website-list:nth-child(1) {
-      transition-delay: .15s; }
-    #overlay.toggled .website-list:nth-child(2) {
-      transition-delay: .3s; }
-    #overlay.toggled .website-list:nth-child(3) {
-      transition-delay: .45s; }
-    #overlay.toggled .website-list:nth-child(4) {
-      transition-delay: .6s; }
+    transition: visibility 0.75s, opacity 0.75s ease-in; }
     #overlay.toggled .website-list li {
       transform: translateY(-50px);
       opacity: 1;
-      transition: transform 0.4s, opacity 0.4s; }
+      transition: transform 0.45s, opacity 0.45s; }
   #overlay .website-list {
     text-align: center;
     vertical-align: middle;
@@ -48,37 +41,36 @@ html, body {
       font-size: 70px;
       transform: translateY(0px);
       opacity: 0;
-      transition: transform 0.15s, opacity 0.15s; }
+      transition: transform 0.45s, opacity 0.45s; }
       #overlay .website-list li:nth-child(1) {
-        transition-delay: .6s; }
+        transition-delay: 0.6s; }
       #overlay .website-list li:nth-child(2) {
-        transition-delay: .45s; }
+        transition-delay: 0.45s; }
       #overlay .website-list li:nth-child(3) {
-        transition-delay: .3s; }
-      #overlay .website-list li:nth-child(4) {
-        transition-delay: .15s; }
+        transition-delay: 0.3s; }
 
 .hamburger {
   position: absolute;
   z-index: 10;
   cursor: pointer;
-  margin: 10px;
-  /* Rotate top bar */
-  /* Hide the second bar */
-  /* Rotate bottom bar */ }
+  margin: 10px; }
   .hamburger div {
     width: 35px;
     height: 5px;
     background-color: #fd7000;
     margin: 6px 0;
     transition: 0.4s; }
-  .hamburger.toggled .top-bar {
-    -webkit-transform: rotate(45deg) translate(8px, 8px);
-    transform: rotate(45deg) translate(8px, 8px); }
-  .hamburger.toggled .middle-bar {
-    opacity: 0; }
-  .hamburger.toggled .bottom-bar {
-    -webkit-transform: rotate(-45deg) translate(8px, -8px);
-    transform: rotate(-45deg) translate(8px, -8px); }
+  .hamburger.toggled {
+    /* Rotate top bar */
+    /* Hide the second bar */
+    /* Rotate bottom bar */ }
+    .hamburger.toggled .top-bar {
+      -webkit-transform: rotate(45deg) translate(8px, 8px);
+      transform: rotate(45deg) translate(8px, 8px); }
+    .hamburger.toggled .middle-bar {
+      opacity: 0; }
+    .hamburger.toggled .bottom-bar {
+      -webkit-transform: rotate(-45deg) translate(8px, -8px);
+      transform: rotate(-45deg) translate(8px, -8px); }
 
 /*# sourceMappingURL=index.css.map */

@@ -20,7 +20,7 @@ function hamburgerToggle(element) {
 
 // creates background parallax effect
 var backgroundParallax = function() {
-	$('#container').mousemove(function( event ) {
+	$('body').mousemove(function( event ) {
 
 		var containerWidth = $(this).innerWidth(),
 		    containerHeight = $(this).innerHeight(),
