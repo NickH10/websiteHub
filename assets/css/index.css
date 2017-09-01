@@ -1,12 +1,14 @@
 body {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  padding: 10px;
+  margin: 0;
   overflow: hidden;
   color: #fd7000;
   position: absolute;
-  left: -10px;
-  right: -10px;
-  top: -10px;
-  bottom: -10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background: url("../img/fog_forest.jpg") no-repeat center center fixed;
   background-size: 110% 110%; }
 
@@ -22,14 +24,6 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.9s, opacity 0.9s ease-out 0.45s; }
-  #overlay.toggled {
-    visibility: visible;
-    opacity: .7;
-    transition: visibility 0.75s, opacity 0.75s ease-in; }
-    #overlay.toggled .website-list li {
-      transform: translateY(-50px);
-      opacity: 1;
-      transition: transform 0.45s, opacity 0.45s; }
   #overlay .website-list {
     text-align: center;
     vertical-align: middle;
@@ -49,28 +43,36 @@ body {
       #overlay .website-list li:nth-child(3) {
         transition-delay: 0.3s; }
 
+#overlay.toggled {
+  visibility: visible;
+  opacity: .7;
+  transition: visibility 0.75s, opacity 0.75s ease-in; }
+  #overlay.toggled .website-list li {
+    transform: translateY(-50px);
+    opacity: 1; }
+
 .hamburger {
   position: absolute;
   z-index: 10;
-  cursor: pointer;
-  margin: 10px; }
+  cursor: pointer; }
   .hamburger div {
     width: 35px;
     height: 5px;
     background-color: #fd7000;
     margin: 6px 0;
     transition: 0.4s; }
-  .hamburger.toggled {
-    /* Rotate top bar */
-    /* Hide the second bar */
-    /* Rotate bottom bar */ }
-    .hamburger.toggled .top-bar {
-      -webkit-transform: rotate(45deg) translate(8px, 8px);
-      transform: rotate(45deg) translate(8px, 8px); }
-    .hamburger.toggled .middle-bar {
-      opacity: 0; }
-    .hamburger.toggled .bottom-bar {
-      -webkit-transform: rotate(-45deg) translate(8px, -8px);
-      transform: rotate(-45deg) translate(8px, -8px); }
+
+.hamburger.toggled {
+  /* Rotate top bar */
+  /* Hide the second bar */
+  /* Rotate bottom bar */ }
+  .hamburger.toggled .top-bar {
+    -webkit-transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(8px, 8px); }
+  .hamburger.toggled .middle-bar {
+    opacity: 0; }
+  .hamburger.toggled .bottom-bar {
+    -webkit-transform: rotate(-45deg) translate(8px, -8px);
+    transform: rotate(-45deg) translate(8px, -8px); }
 
 /*# sourceMappingURL=index.css.map */

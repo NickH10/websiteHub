@@ -1,0 +1,7 @@
+TODO:
+
+-Fix scrollbars/absolute positioning issues
+-Mobile styling
+-Clean up animations
+-Add contact me field
+-Switch container from top/bottom/right/left 0 (width/height 100%) to height:0 and use transitions to blow it up on hamburger toggle

@@ -5,15 +5,16 @@ $fade-time: .15s;
 
 body {
 	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-	// margin: 0;
+	padding: 10px;
+	margin: 0;
 	overflow: hidden;
 	color: $primary-orange;
 
 	position: absolute;
-	left: -10px;
-	right: -10px;
-	top: -10px;
-	bottom: -10px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 
 	background: url("../img/fog_forest.jpg") no-repeat center center fixed;
 	background-size: 110% 110%; //width height
@@ -33,21 +34,6 @@ body {
 	opacity: 0;
 	transition: visibility 6*$fade-time, opacity 6*$fade-time ease-out 3*$fade-time;
 
-	&.toggled {
-		visibility: visible;
-		opacity: .7;
-		transition: visibility 5*$fade-time, opacity 5*$fade-time ease-in;
-	
-		.website-list {
-
-			li {
-				transform: translateY(-50px);
-				opacity: 1;
-				transition: transform 3*$fade-time, opacity 3*$fade-time;
-			}
-		}
-	}
-
 	.website-list {
 		text-align: center;
 		vertical-align: middle;
@@ -57,7 +43,6 @@ body {
 		margin-top: 100px;
 
 		li {
-			// font-size: calc(30px + (84 - 30) * (100vw - 320px) / (1680 - 320));
 			font-size: 70px;
 
 			transform: translateY(0px);
@@ -75,15 +60,26 @@ body {
 			}
 		}
 	}
+}
+#overlay.toggled {
+	visibility: visible;
+	opacity: .7;
+	transition: visibility 5*$fade-time, opacity 5*$fade-time ease-in;
 
-	
+	.website-list {
+
+		li {
+			transform: translateY(-50px);
+			opacity: 1;
+		}
+	}
 }
 
 .hamburger {
 	position: absolute;
 	z-index: 10;
     cursor: pointer;
-    margin: 10px;
+    // margin: 10px;
 
 	div {
 	    width: 35px;
@@ -92,22 +88,20 @@ body {
 	    margin: 6px 0;
 	    transition: 0.4s;
 	}
-    
-	&.toggled {
-		/* Rotate top bar */
-		.top-bar {
-		    -webkit-transform: rotate(45deg) translate(8px, 8px) ;
-		    transform: rotate(45deg) translate(8px, 8px) ;
-		}
-		/* Hide the second bar */
-		.middle-bar {
-		    opacity: 0;
-		}
-		/* Rotate bottom bar */
-		.bottom-bar {
-		    -webkit-transform: rotate(-45deg) translate(8px, -8px) ;
-		    transform: rotate(-45deg) translate(8px, -8px) ;
-		}
+}
+.hamburger.toggled {
+	/* Rotate top bar */
+	.top-bar {
+	    -webkit-transform: rotate(45deg) translate(8px, 8px) ;
+	    transform: rotate(45deg) translate(8px, 8px) ;
 	}
-
+	/* Hide the second bar */
+	.middle-bar {
+	    opacity: 0;
+	}
+	/* Rotate bottom bar */
+	.bottom-bar {
+	    -webkit-transform: rotate(-45deg) translate(8px, -8px) ;
+	    transform: rotate(-45deg) translate(8px, -8px) ;
+	}
 }
